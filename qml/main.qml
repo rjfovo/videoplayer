@@ -21,7 +21,6 @@ FishUI.Window {
     height: 480
     minimumWidth: 700
     minimumHeight: 450
-    color: FishUI.Theme.backgroundColor
 
     header.visible: !rootWindow.isFullScreen()
     headerBackground.color: FishUI.Theme.secondBackgroundColor
