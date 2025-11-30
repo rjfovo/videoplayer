@@ -45,7 +45,7 @@ MpvRenderer::MpvRenderer(MpvObject *new_obj)
 
 void MpvRenderer::render()
 {
-    obj->window()->resetOpenGLState();
+    // Qt6: resetOpenGLState() is no longer needed as Qt Quick handles OpenGL state automatically
 
     QOpenGLFramebufferObject *fbo = framebufferObject();
     mpv_opengl_fbo mpfbo;
@@ -66,7 +66,7 @@ void MpvRenderer::render()
     // other API details.
     mpv_render_context_render(obj->mpv_gl, params);
 
-    obj->window()->resetOpenGLState();
+    // Qt6: resetOpenGLState() is no longer needed as Qt Quick handles OpenGL state automatically
 }
 
 QOpenGLFramebufferObject * MpvRenderer::createFramebufferObject(const QSize &size)
@@ -380,7 +380,7 @@ void MpvObject::setHWDecoding(bool value)
 
 QQuickFramebufferObject::Renderer *MpvObject::createRenderer() const
 {
-    window()->setPersistentOpenGLContext(true);
+    // Qt6: setPersistentOpenGLContext() is no longer needed as Qt Quick handles OpenGL context automatically
     window()->setPersistentSceneGraph(true);
     return new MpvRenderer(const_cast<MpvObject *>(this));
 }

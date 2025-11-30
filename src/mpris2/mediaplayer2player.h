@@ -12,6 +12,9 @@
 class MpvObject;
 class QDBusObjectPath;
 
+// Qt6: Use opaque pointer for forward-declared types
+Q_DECLARE_OPAQUE_POINTER(MpvObject*)
+
 class MediaPlayer2Player : public QDBusAbstractAdaptor
 {
     Q_OBJECT

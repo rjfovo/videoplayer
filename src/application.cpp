@@ -44,8 +44,7 @@
 
 static QApplication *createApplication(int &argc, char **argv, const QString &applicationName)
 {
-    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+    // Qt6: High-DPI scaling and pixmaps are automatically enabled, no need to set attributes
     QApplication::setOrganizationName("cutefishos");
     QApplication::setApplicationName(applicationName);
     QApplication::setOrganizationDomain("cutefishos.com");
