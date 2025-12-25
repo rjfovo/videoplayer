@@ -94,6 +94,7 @@ Application::Application(int &argc, char **argv, const QString &applicationName)
     QObject::connect(m_engine, &QQmlApplicationEngine::objectCreated,
                      m_app, onObjectCreated, Qt::QueuedConnection);
     m_engine->addImportPath("qrc:/qml");
+    m_engine->addImportPath(QStringLiteral("/usr/share/qml"));
 
     m_engine->load(url);
 }
